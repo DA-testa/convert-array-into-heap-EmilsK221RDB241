@@ -69,6 +69,10 @@ def main():
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
+        
+        except Exception as e:
+            print("Error:{e}")
+            return
 
 
 if __name__ == "__main__":

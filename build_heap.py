@@ -3,18 +3,16 @@
 
 def build_heap(data):
     swaps = []
+    n = len(data)
     
-    
-    x = len(data)
-    for i in range(x // 2, -1, -1):
-        heap(x, data, swaps)
+    for i in range(n // 2, -1, -1):
+        heap(i, n, data, swaps)
+        
     return swaps
 
 
-def heap(x, data, swaps):
- 
+def heap(x, n, data, swaps):
     min = x
-    x = len(data)
     
     v = 2*x+1
     if v<n and data[v]<data[min]:
@@ -27,7 +25,7 @@ def heap(x, data, swaps):
     if x != min:
         data[x],data[min] = data[min],data[x]
         swaps.append((x,min))
-        heap(min,data,swaps)
+        heap(min, n, data, swaps)
         
         
 def main():
@@ -36,11 +34,9 @@ def main():
         
         inp = input("Input: I = keyboard, F = file: ")
         
-        
         if inp.startswith('I'):
             n = int(input())
             data = list(map(int, input().split()))
-            
             
         elif inp.startswith('F'):
             name = "tests/" + input("File name: ")
@@ -48,14 +44,15 @@ def main():
                 n = int(g.readline())
                 data = list(map(int, g.readline().split()))
                     
-                    
+            
         assert len(data) == n
         swaps = build_heap(data)
         print(len(swaps))
         for i, j in swaps:
             print(i, j)
+            
     except Exception as e:
-        print(f"Error:{e}")
+        print(f"Error: {e}")
         return
 
 

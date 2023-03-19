@@ -40,11 +40,11 @@ def main():
             n = int(input())
             data = list(map(int, input().split()))
             
-            elif inp.startswith('F'):
-                name = "tests/" + input("File name: ")
-                with open(name, 'r') as g:
-                    n = int(g.readline())
-                    data = list(map(int, g.readline().split()))
+        elif inp.startswith('F'):
+            name = "tests/" + input("File name: ")
+            with open(name, 'r') as g:
+                n = int(g.readline())
+                data = list(map(int, g.readline().split()))
                     
             
             
@@ -55,11 +55,11 @@ def main():
     # input from keyboard
     # checks if lenght of data is the same as the said lenght
     
-    assert len(data) == n
+        assert len(data) == n
 
     # calls function to assess the data 
     # and give back all swaps
-    swaps = build_heap(data)
+        swaps = build_heap(data)
 
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))

@@ -70,9 +70,9 @@ def main():
     for i, j in swaps:
         print(i, j)
         
-        except Exception as e:
-            print("Error:{e}")
-            return
+except Exception as e:
+    print(f"Error:{e}")
+    return
 
 
 if __name__ == "__main__":

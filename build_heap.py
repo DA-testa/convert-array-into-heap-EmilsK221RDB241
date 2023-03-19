@@ -3,25 +3,58 @@
 
 def build_heap(data):
     swaps = []
-    # TODO: Creat heap and heap sort
-    # try to achieve  O(n) and not O(n2)
-
+    
+    
+    x = len(data)
+    for i in range(x // 2, -1, -1):
+        heap(x, data, swaps)
 
     return swaps
 
 
+def heap(x, data, swaps):
+    
+    min = u
+    x = len(data)
+    
+    v = 2*u+1
+    if v<n and data[v]<data[min]:
+    min = v
+    
+    w = 2*u+2
+    if w<n and data[w]<data[min]:
+    min = w
+    
+    if x != min:
+        data[x],data[min] = data[min],data[x]
+        swaps.append((x,min))
+        heap(min,data,swaps)
+
 def main():
     
+    try:
+        
+        inp = input("Input: I = keyboard, F = file: ")
+        
+        if inp.startswith('I'):
+            n = int(input())
+            data = list(map(int, input().split()))
+            
+            elif inp.startswith('F'):
+                name = "tests/" + input("File name: ")
+                with open(name, 'r') as g:
+                    n = int(g.readline())
+                    data = list(map(int, g.readline().split()))
+                    
+            
+            
+            
     # TODO : add input and corresponding checks
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
-
-
     # input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
-
     # checks if lenght of data is the same as the said lenght
+    
     assert len(data) == n
 
     # calls function to assess the data 

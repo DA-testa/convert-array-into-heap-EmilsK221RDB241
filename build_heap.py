@@ -32,29 +32,30 @@ def heap(x, data, swaps):
         
 def main():
     
+    def main():
+ 
     try:
-        
+     
         inp = input("Input: I = keyboard, F = file: ")
-        
+     
         if inp.startswith('I'):
             n = int(input())
             data = list(map(int, input().split()))
-            
+         
         elif inp.startswith('F'):
             name = "tests/" + input("File name: ")
             with open(name, 'r') as g:
                 n = int(g.readline())
                 data = list(map(int, g.readline().split()))
-                    
- 
-    assert len(data) == n
-    swaps = build_heap(data)
-    print(len(swaps))
-    for i, j in swaps:
-        print(i, j)
-except Exception as e:
-    print(f"Error:{e}")
-    return
+                 
+        assert len(data) == n
+        swaps = build_heap(data)
+        print(len(swaps))
+        for i, j in swaps:
+            print(i, j)
+    except Exception as e:
+        print(f"Error:{e}")
+        return
 
 
 if __name__ == "__main__":

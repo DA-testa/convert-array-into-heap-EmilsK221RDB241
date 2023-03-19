@@ -19,11 +19,11 @@ def heap(x, data, swaps):
     
     v = 2*u+1
     if v<n and data[v]<data[min]:
-    min = v
+        min = v
     
     w = 2*u+2
     if w<n and data[w]<data[min]:
-    min = w
+        min = w
     
     if x != min:
         data[x],data[min] = data[min],data[x]
